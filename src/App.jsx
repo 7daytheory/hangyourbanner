@@ -1,8 +1,11 @@
+import Banner from "./components/Banner/Banner"
+import './App.css';
+
 function App() {
 
   return (
     <>
-      Hang your banner!
+      <Banner />
     </>
   )
 }
