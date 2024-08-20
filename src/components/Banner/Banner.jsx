@@ -1,3 +1,4 @@
+import html2canvas from 'html2canvas';
 import React, { useState } from 'react'
 
 const Banner = () => {
@@ -12,11 +13,31 @@ const Banner = () => {
     setHeight(event.target.value);
   }
 
+  //Create image to save
+  const printImage = () => {
+    const banner = document.querySelector("#banner");
+      html2canvas(banner).then(function(canvas) {
+        const myImage = canvas.toDataURL();
+        downloadURI(myImage, "hangyourbanner.jpg");
+    });
+  }
+
+  // Download the image
+  function downloadURI(uri, name) {
+    const link = document.createElement('a');
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  }
+
   return (
         <div className="flex justify-between items-center mx-auto w-[70%]">
           <div id="banner" style={{ width: `${width}px`, height: `${height}px` }} className={`bg-white text-black border-solid border-slate-700 border-2 relative text-center font-semibold text-[16px] leading-[27px] hover:bg-white`}>
             Test
             <div className="absolute bottom-[-150px] left-0 w-0 h-0 border-l-[150px] border-r-[150px] border-t-[150px] border-solid border-slate-700 border-2 border-t-gray border-l-transparent border-r-transparent"></div>
+            <div id="button" onClick={printImage} className="items-center pw-4 py-2">Download Banner</div>
           </div>
           <div id="sliders" className="ml-6 w-[40%]">
             <div className="relative mb-10">
