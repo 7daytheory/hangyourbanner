@@ -1,10 +1,47 @@
 import html2canvas from 'html2canvas';
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+
+const teams = [
+  { city: 'Arizona', name: 'Arizona Cardinals', format: 'svg' },
+  { city: 'Atlanta', name: 'Atlanta Falcons', format: 'svg' },
+  { city: 'Baltimore', name: 'Baltimore Ravens', format: 'svg' },
+  { city: 'Buffalo', name: 'Buffalo Bills', format: 'svg' },
+  { city: 'Carolina', name: 'Carolina Panthers', format: 'svg' },
+  { city: 'Chicago', name: 'Chicago Bears', format: 'svg' },
+  { city: 'Cincinnati', name: 'Cincinnati Bengals', format: 'svg' },
+  { city: 'Cleveland', name: 'Cleveland Browns', format: 'svg' },
+  { city: 'Dallas', name: 'Dallas Cowboys', format: 'svg' },
+  { city: 'Denver', name: 'Denver Broncos', format: 'svg' },
+  { city: 'Detroit', name: 'Detroit Lions', format: 'svg' },
+  { city: 'GreenBay', name: 'Green Bay Packers', format: 'svg' },
+  { city: 'Houston', name: 'Houston Texans', format: 'svg' },
+  { city: 'Indianapolis', name: 'Indianapolis Colts', format: 'svg' },
+  { city: 'Jacksonville', name: 'Jacksonville Jaguars', format: 'svg' },
+  { city: 'KansasCity', name: 'Kansas City Chiefs', format: 'svg' },
+  { city: 'LasVegas', name: 'Las Vegas Raiders', format: 'png' },
+  { city: 'LAChargers', name: 'Los Angeles Chargers', format: 'svg' },
+  { city: 'LARams', name: 'Los Angeles Rams', format: 'svg' },
+  { city: 'Miami', name: 'Miami Dolphins', format: 'svg' },
+  { city: 'Minnesota', name: 'Minnesota Vikings', format: 'svg' },
+  { city: 'NewEngland', name: 'New England Patriots', format: 'svg' },
+  { city: 'NewOrleans', name: 'New Orleans Saints', format: 'svg' },
+  { city: 'NYGiants', name: 'New York Giants', format: 'svg' },
+  { city: 'NYJets', name: 'New York Jets', format: 'svg' },
+  { city: 'Philadelphia', name: 'Philadelphia Eagles', format: 'svg' },
+  { city: 'Pittsburgh', name: 'Pittsburgh Steelers', format: 'svg' },
+  { city: 'SanFrancisco', name: 'San Francisco 49ers', format: 'svg' },
+  { city: 'Seattle', name: 'Seattle Seahawks', format: 'svg' },
+  { city: 'TampaBay', name: 'Tampa Bay Buccaneers', format: 'svg' },
+  { city: 'Tennessee', name: 'Tennessee Titans', format: 'svg' },
+  { city: 'Washington', name: 'Washington Commanders', format: 'svg' }
+];
 
 const Banner = () => {
   const [width, setWidth] = useState(300);
   const [height, setHeight] = useState(400);
   const [bannerText, setBannerText] = useState("Enter Banner Text");
+  const [selectedTeam, setSelectedTeam] = useState(`../../src/assets/nfl/${teams[0].city}.svg`); 
+  const [teamName, setTeamName] = useState(teams[0].name); 
 
   function setBannerWidth(event) {
     setWidth(event.target.value);
@@ -23,6 +60,12 @@ const Banner = () => {
     });
   }
 
+  function handleTeamChange(team) {
+    const selectedTeam = teams.find(t => t.city === team);
+    setSelectedTeam(`../../src/assets/nfl/${selectedTeam.city}.${selectedTeam.format}`);
+    setTeamName({teamName});
+  }
+
   // Download the image
   function downloadURI(uri, name) {
     const link = document.createElement('a');
@@ -34,9 +77,11 @@ const Banner = () => {
   }
 
   return (
-        <div className="flex justify-between items-center mx-auto w-[70%] mt-10">
+        <div className="flex justify-between items-center mx-auto w-[70%] mt-10 relative">
           <div id="banner" style={{ width: `${width}px`, height: `${height}px` }} className={`bg-white text-black border-solid border-slate-700 border-2 relative text-center font-semibold text-[16px] leading-[27px] hover:bg-white`}>
-            <p className='mt-14 font-bold text-slate-500'>{bannerText}</p>
+            <img src={selectedTeam} alt="Image here" className="h-[100px] w-auto m-auto mt-4" />
+            <p className='mt-14 font-bold text-[1.5em] text-slate-600 p-2'>{bannerText}</p>
+            <h2 className="font-bold text-[3em] absolute bottom-3 text-slate-700 w-[100%] leading-10">{teamName}</h2>
             <div className="absolute bottom-[-150px] left-0 w-0 h-0 border-l-[150px] border-r-[150px] border-t-[150px] border-solid border-slate-700 border-2 border-t-gray border-l-transparent border-r-transparent"></div>
           </div>
 
@@ -58,6 +103,21 @@ const Banner = () => {
                 className="w-full bg-gray-200 rounded-lg appearance-none cursor-pointer px-2 py-1 bg-gray-200 mb-8"
                 />
             </div>
+            <div className="mb-4">
+            <label htmlFor="team-select" className="mr-4">Select Logo</label>
+            <select 
+              id="team-select" 
+              value={selectedTeam} 
+              onChange={(e) => handleTeamChange(e.target.value)}
+              className="w-full bg-gray-200 rounded-md cursor-pointer bg-white border-2 border-slate-400"
+            >
+              {teams.map((team, index) => (
+                <option key={index} value={team.city}>
+                  {team.city}
+                </option>
+              ))}
+            </select>
+          </div>
             <div className="relative mb-10">
               <h2>Banner Width</h2>
               <input 
@@ -67,7 +127,7 @@ const Banner = () => {
                 min="200" 
                 max="500"
                 onChange={setBannerWidth}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer dark:bg-gray-700"
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer bg-gray-700"
               />
               <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">Smallest</span>
               <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-1/3 -translate-x-1/2 rtl:translate-x-1/2 -bottom-6">Smaller</span>
