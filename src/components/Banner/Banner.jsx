@@ -40,6 +40,7 @@ const Banner = () => {
   const [width, setWidth] = useState(300);
   const [height, setHeight] = useState(400);
   const [bannerText, setBannerText] = useState("Enter Banner Text");
+  const [textSize, setTextSize] = useState(24);
   const [selectedTeam, setSelectedTeam] = useState(`../../src/assets/nfl/${teams[0].city}.svg`); 
   const [teamName, setTeamName] = useState(teams[0].name); 
 
@@ -80,7 +81,7 @@ const Banner = () => {
         <div className="flex justify-between items-center mx-auto w-[70%] mt-10 relative">
           <div id="banner" style={{ width: `${width}px`, height: `${height}px` }} className={`bg-white text-black border-solid border-slate-700 border-2 relative text-center font-semibold text-[16px] leading-[27px] hover:bg-white`}>
             <img src={selectedTeam} alt="Image here" className="h-[100px] w-auto m-auto mt-4" />
-            <p className='mt-14 font-bold text-[1.5em] text-slate-600 p-2'>{bannerText}</p>
+            <p className='mt-14 font-bold text-slate-600 p-2' style={{fontSize: `${textSize}px`}}>{bannerText}</p>
             <h2 className="font-bold text-[3em] absolute bottom-3 text-slate-700 w-[100%] leading-10">{teamName}</h2>
             <div className="absolute bottom-[-150px] left-0 w-0 h-0 border-l-[150px] border-r-[150px] border-t-[150px] border-solid border-slate-700 border-2 border-t-gray border-l-transparent border-r-transparent"></div>
           </div>
@@ -118,6 +119,20 @@ const Banner = () => {
               ))}
             </select>
           </div>
+          <div className="relative mb-10">
+              <h2>Text Size</h2>
+              <input 
+                id="labels-range-input banner-width" 
+                type="range" 
+                value={textSize} 
+                min="8" 
+                max="42"
+                onChange={(e) => setTextSize(e.target.value)}
+                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer bg-gray-700"
+              />
+              <span className="text-sm text-gray-500 dark:text-gray-400 absolute start-0 -bottom-6">8px</span>
+              <span className="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">48px</span>
+            </div>
             <div className="relative mb-10">
               <h2>Banner Width</h2>
               <input 
