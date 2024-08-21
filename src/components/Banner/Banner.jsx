@@ -4,6 +4,7 @@ import React, { useState } from 'react'
 const Banner = () => {
   const [width, setWidth] = useState(300);
   const [height, setHeight] = useState(400);
+  const [bannerText, setBannerText] = useState("Enter Banner Text");
 
   function setBannerWidth(event) {
     setWidth(event.target.value);
@@ -35,7 +36,7 @@ const Banner = () => {
   return (
         <div className="flex justify-between items-center mx-auto w-[70%] mt-10">
           <div id="banner" style={{ width: `${width}px`, height: `${height}px` }} className={`bg-white text-black border-solid border-slate-700 border-2 relative text-center font-semibold text-[16px] leading-[27px] hover:bg-white`}>
-            Test
+            <p className='mt-14 font-bold text-slate-500'>{bannerText}</p>
             <div className="absolute bottom-[-150px] left-0 w-0 h-0 border-l-[150px] border-r-[150px] border-t-[150px] border-solid border-slate-700 border-2 border-t-gray border-l-transparent border-r-transparent"></div>
           </div>
 
@@ -47,6 +48,16 @@ const Banner = () => {
           >
             Download Banner
           </div>
+          <div className="relative">
+              <h2>Banner Text</h2>
+              <input
+                id="labels-range-input banner-height"
+                type="input"
+                value={bannerText}
+                onChange={(e) => setBannerText(e.target.value)}
+                className="w-full bg-gray-200 rounded-lg appearance-none cursor-pointer px-2 py-1 bg-gray-200 mb-8"
+                />
+            </div>
             <div className="relative mb-10">
               <h2>Banner Width</h2>
               <input 
