@@ -33,15 +33,22 @@ const Banner = () => {
   }
 
   return (
-        <div className="flex justify-between items-center mx-auto w-[70%]">
+        <div className="flex justify-between items-center mx-auto w-[70%] mt-10">
           <div id="banner" style={{ width: `${width}px`, height: `${height}px` }} className={`bg-white text-black border-solid border-slate-700 border-2 relative text-center font-semibold text-[16px] leading-[27px] hover:bg-white`}>
             Test
             <div className="absolute bottom-[-150px] left-0 w-0 h-0 border-l-[150px] border-r-[150px] border-t-[150px] border-solid border-slate-700 border-2 border-t-gray border-l-transparent border-r-transparent"></div>
-            <div id="button" onClick={printImage} className="items-center pw-4 py-2">Download Banner</div>
           </div>
+
           <div id="sliders" className="ml-6 w-[40%]">
+          <div 
+            id="button" 
+            onClick={printImage} 
+            className="mt-4 px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white text-center mb-8 w-[50%] rounded m-auto cursor-pointer"
+          >
+            Download Banner
+          </div>
             <div className="relative mb-10">
-              <h2>Width</h2>
+              <h2>Banner Width</h2>
               <input 
                 id="labels-range-input banner-width" 
                 type="range" 
@@ -57,7 +64,7 @@ const Banner = () => {
               <span className="text-sm text-gray-500 dark:text-gray-400 absolute end-0 -bottom-6">Largest</span>
             </div>
             <div className="relative">
-              <h2>Height</h2>
+              <h2>Banner Height</h2>
               <input 
                 id="labels-range-input banner-height" 
                 type="range" 
