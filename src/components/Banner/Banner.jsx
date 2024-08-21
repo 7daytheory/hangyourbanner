@@ -18,7 +18,7 @@ const teams = [
   { city: 'Indianapolis', name: 'Indianapolis Colts' },
   { city: 'Jacksonville', name: 'Jacksonville Jaguars' },
   { city: 'KansasCity', name: 'Kansas City Chiefs' },
-  { city: 'LasVegas', name: 'Las Vegas Raiders' }, //get svg version of logo
+  { city: 'LasVegas', name: 'Las Vegas Raiders' },
   { city: 'LAChargers', name: 'Los Angeles Chargers' },
   { city: 'LARams', name: 'Los Angeles Rams' },
   { city: 'Miami', name: 'Miami Dolphins' },
