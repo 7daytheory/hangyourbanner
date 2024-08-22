@@ -1,6 +1,40 @@
 import html2canvas from 'html2canvas';
 import React, { useState } from 'react';
 
+//Import logo
+import ArizonaCardinals from '../../assets/nfl/Arizona.svg';
+import AtlantaFalcons from '../../assets/nfl/Atlanta.svg';
+import BaltimoreRavens from '../../assets/nfl/Baltimore.svg';
+import BuffaloBills from '../../assets/nfl/Buffalo.svg';
+import CarolinaPanthers from '../../assets/nfl/Carolina.svg';
+import ChicagoBears from '../../assets/nfl/Chicago.svg';
+import CincinnatiBengals from '../../assets/nfl/Cincinnati.svg';
+import ClevelandBrowns from '../../assets/nfl/Cleveland.svg';
+import DallasCowboys from '../../assets/nfl/Dallas.svg';
+import DenverBroncos from '../../assets/nfl/Denver.svg';
+import DetroitLions from '../../assets/nfl/Detroit.svg';
+import GreenBayPackers from '../../assets/nfl/GreenBay.svg';
+import HoustonTexans from '../../assets/nfl/Houston.svg';
+import IndianapolisColts from '../../assets/nfl/Indianapolis.svg';
+import JacksonvilleJaguars from '../../assets/nfl/Jacksonville.svg';
+import KansasCityChiefs from '../../assets/nfl/KansasCity.svg';
+import LasVegasRaiders from '../../assets/nfl/LasVegas.svg';
+import LAChargers from '../../assets/nfl/LAChargers.svg';
+import LARams from '../../assets/nfl/LARams.svg';
+import MiamiDolphins from '../../assets/nfl/Miami.svg';
+import MinnesotaVikings from '../../assets/nfl/Minnesota.svg';
+import NewEnglandPatriots from '../../assets/nfl/NewEngland.svg';
+import NewOrleansSaints from '../../assets/nfl/NewOrleans.svg';
+import NYGiants from '../../assets/nfl/NYGiants.svg';
+import NYJets from '../../assets/nfl/NYJets.svg';
+import PhiladelphiaEagles from '../../assets/nfl/Philadelphia.svg';
+import PittsburghSteelers from '../../assets/nfl/Pittsburgh.svg';
+import SanFrancisco49ers from '../../assets/nfl/SanFrancisco.svg';
+import SeattleSeahawks from '../../assets/nfl/Seattle.svg';
+import TampaBayBuccaneers from '../../assets/nfl/TampaBay.svg';
+import TennesseeTitans from '../../assets/nfl/Tennessee.svg';
+import WashingtonCommanders from '../../assets/nfl/Washington.svg';
+
 const teams = [
   { city: 'Arizona', name: 'Arizona Cardinals' },
   { city: 'Atlanta', name: 'Atlanta Falcons' },
