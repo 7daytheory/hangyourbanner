@@ -54,7 +54,7 @@ const Banner = () => {
 
   //Create image to save
   const printImage = () => {
-    const banner = document.querySelector("#banner");
+    const banner = document.querySelector("#banner-wrap");
       html2canvas(banner).then(function(canvas) {
         const myImage = canvas.toDataURL();
         downloadURI(myImage, "hangyourbanner.jpg");
@@ -79,11 +79,12 @@ const Banner = () => {
 
   return (
         <div className="flex justify-between items-center mx-auto w-[70%] mt-10 relative">
-          <div id="banner" style={{ width: `${width}px`, height: `${height}px` }} className={`bg-white text-black border-solid border-slate-700 border-2 relative text-center font-semibold text-[16px] leading-[27px] hover:bg-white`}>
-            <img src={selectedTeam} alt="Image here" className="h-[100px] w-auto m-auto mt-4" />
-            <p className='mt-14 font-bold text-slate-600 p-2' style={{fontSize: `${textSize}px`}}>{bannerText}</p>
-            <h2 className="font-bold text-[3em] absolute bottom-3 text-slate-700 w-[100%] leading-10">{teamName}</h2>
-            <div className="absolute bottom-[-150px] left-0 w-0 h-0 border-l-[150px] border-r-[150px] border-t-[150px] border-solid border-slate-700 border-2 border-t-gray border-l-transparent border-r-transparent"></div>
+          <div id="banner-wrap" className='p-3 border-2 border-solid border-slate-700 bg-gray-200'>
+            <div id="banner" style={{ width: `${width}px`, height: `${height}px` }} className={`p-4 bg-white text-black border-dashed border-slate-700 border-2 relative text-center font-semibold text-[16px] leading-[27px] hover:bg-white`}>
+              <img src={selectedTeam} alt="Image here" className="h-[100px] w-auto m-auto mt-4" />
+              <p className='mt-14 font-bold text-slate-600 p-2' style={{fontSize: `${textSize}px`}}>{bannerText}</p>
+              <h2 className="font-bold text-[3em] absolute bottom-3 text-slate-700 w-[90%] leading-10">{teamName}</h2>
+            </div>
           </div>
 
           <div id="sliders" className="ml-6 w-[40%]">
