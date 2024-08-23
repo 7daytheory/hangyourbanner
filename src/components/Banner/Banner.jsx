@@ -1,5 +1,6 @@
 import html2canvas from 'html2canvas';
 import React, { useState } from 'react';
+import ColorPicker from '../ColorPicker/ColorPicker.jsx';
 
 //Import logo
 import ArizonaCardinals from '../../assets/nfl/Arizona.svg';
@@ -76,7 +77,9 @@ const Banner = () => {
   const [bannerText, setBannerText] = useState("Enter Banner Text");
   const [textSize, setTextSize] = useState(24);
   const [selectedTeam, setSelectedTeam] = useState(ArizonaCardinals); 
-  const [teamName, setTeamName] = useState(teams[0].name); 
+  const [teamName, setTeamName] = useState(teams[0].name);
+
+  const [fontColor, setFontColor] = useState('#333333');
 
   function setBannerWidth(event) {
     setWidth(event.target.value);
@@ -122,16 +125,16 @@ const Banner = () => {
           className="p-4 bg-white text-black border-dashed border-slate-700 border-2 relative text-center font-semibold flex flex-col justify-between items-center"
         >
           <img src={selectedTeam} alt="Team Logo" className="h-[100px] w-auto m-auto mt-2" />
-          <p className="mt-2 font-bold text-slate-600 p-2" style={{ fontSize: `${textSize}px` }}>
+          <p className="mt-2 font-bold text-slate-600 p-2" style={{ fontSize: `${textSize}px` , color: `${fontColor}`}}>
             {bannerText}
           </p>
-          <h2 className="font-bold text-[3em] text-slate-700 w-[90%] leading-10 mt-auto mb-2">
+          <h2 className="font-bold text-[3em] w-[90%] leading-10 mt-auto mb-2">
             {teamName}
           </h2>
         </div>
       </div>
 
-      <div id="sliders" className="w-full lg:w-[60%] mt-8 lg:mt-0 lg:ml-6">
+      <div id="sliders" className="w-full lg:w-[40%] mt-8 lg:mt-0 lg:ml-6">
         <div 
           id="button" 
           onClick={printImage} 
@@ -140,22 +143,12 @@ const Banner = () => {
           Download Banner
         </div>
         <div className="mb-4">
-          <h2>Banner Text</h2>
-          <input
-            id="banner-text-input"
-            type="input"
-            value={bannerText}
-            onChange={(e) => setBannerText(e.target.value)}
-            className="w-full bg-gray-200 rounded-lg cursor-pointer px-2 py-1 mb-8"
-          />
-        </div>
-        <div className="mb-4">
           <label htmlFor="team-select" className="mr-4">Select Logo</label>
           <select 
             id="team-select" 
             value={teamName} 
             onChange={handleTeamChange}
-            className="w-full bg-gray-200 rounded-md cursor-pointer bg-white border-2 border-slate-400"
+            className="w-full bg-gray-200 rounded-md cursor-pointer mb-4 bg-white border-2 border-slate-400"
           >
             {teams.map((team, index) => (
               <option key={index} value={team.city}>
@@ -164,7 +157,7 @@ const Banner = () => {
             ))}
           </select>
         </div>
-        <div className="mb-10">
+        <div className="mb-2">
           <h2>Text Size</h2>
           <input 
             id="text-size-range-input" 
@@ -175,8 +168,24 @@ const Banner = () => {
             onChange={(e) => setTextSize(e.target.value)}
             className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer"
           />
-          <span className="text-sm text-gray-500 absolute start-0 -bottom-6">8px</span>
-          <span className="text-sm text-gray-500 absolute end-0 -bottom-6">42px</span>
+        </div>
+          <div className="mb-2">
+            <h2>Banner Text</h2>
+            <input
+              id="banner-text-input"
+              type="input"
+              value={bannerText}
+              onChange={(e) => setBannerText(e.target.value)}
+              className="w-full bg-gray-200 rounded-lg cursor-pointer px-2 py-1 mb-2 cursor-text"
+            />
+          </div>
+        <div className='mb-6 ml-[5%]'>
+          <ColorPicker
+          label="Set Text Color"
+          value={fontColor}
+          defaultColor={fontColor}
+          setValue={setFontColor}
+        />
         </div>
         <div className="mb-10">
           <h2>Banner Width</h2>
@@ -184,13 +193,11 @@ const Banner = () => {
             id="banner-width-range-input" 
             type="range" 
             value={width} 
-            min="250" 
+            min="200" 
             max="400"
             onChange={setBannerWidth}
             className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer"
           />
-          <span className="text-sm text-gray-500 absolute start-0 -bottom-6">Smallest</span>
-          <span className="text-sm text-gray-500 absolute end-0 -bottom-6">Largest</span>
         </div>
         <div className="mb-10">
           <h2>Banner Height</h2>
@@ -199,12 +206,10 @@ const Banner = () => {
             type="range" 
             value={height} 
             min="315" 
-            max="600"
+            max="485"
             onChange={setBannerHeight}
             className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer"
           />
-          <span className="text-sm text-gray-500 absolute start-0 -bottom-6">Smallest</span>
-          <span className="text-sm text-gray-500 absolute end-0 -bottom-6">Largest</span>
         </div>
       </div>
     </div>
