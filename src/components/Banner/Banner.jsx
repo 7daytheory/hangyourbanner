@@ -146,7 +146,7 @@ const Banner = () => {
         </div>
         <div className='mb-2'>
           <ColorPicker
-            label="Set Team Name Color"
+            label="Set Banner Color"
             value={bannerColor}
             defaultColor={bannerColor}
             setValue={setBannerColor}
