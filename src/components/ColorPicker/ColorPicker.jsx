@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const ColorPicker = (value, setValue, label) => {
+const ColorPicker = ({ value, setValue, defaultColor, label }) => {
   return (
-    <div className="flex flex-col items-center p-4">
-      <label htmlFor="colorPicker" className="mb-2 font-bold">
+    <div className="mb-4">
+      <label htmlFor={`${label}-colorPicker`} className="mb-2 font-bold block">
         {label}
       </label>
       <input
         type="color"
-        id={`${value}colorPicker`}
+        id={`${label}-colorPicker`}
         value={value}
         onChange={(e) => setValue(e.target.value)}
-        className="cursor-pointer"
+        className="w-full bg-gray-200 rounded-lg cursor-pointer px-2 py-1 mb-2"
       />
       <p className="mt-2">
-        Selected color: <span style={{ value }}>{value}</span>
+        Selected color: <span style={{ color: defaultColor }}>{defaultColor}</span>
       </p>
     </div>
   );
