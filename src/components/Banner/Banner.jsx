@@ -81,7 +81,8 @@ const Banner = () => {
 
   const [fontColor, setFontColor] = useState('#333333');
   const [teamColor, setTeamColor] = useState('#333333');
-
+  const [bannerColor, setBannerColor] = useState('#FFFFFF');
+  
   function setBannerWidth(event) {
     setWidth(event.target.value);
   }
@@ -122,7 +123,7 @@ const Banner = () => {
       <div id="banner-wrap" className="p-2 border-2 border-solid border-slate-700 bg-gray-200">
         <div
           id="banner"
-          style={{ width: `${width}px`, height: `${height}px` }}
+          style={{ width: `${width}px`, height: `${height}px`, background: `${bannerColor}`}}
           className="p-4 bg-white text-black border-dashed border-slate-700 border-2 relative text-center font-semibold flex flex-col justify-between items-center"
         >
           <img src={selectedTeam} alt="Team Logo" className="h-[100px] w-auto m-auto mt-2" />
@@ -142,6 +143,14 @@ const Banner = () => {
           className="mt-4 px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white text-center mb-8 w-full lg:w-[50%] rounded m-auto cursor-pointer"
         >
           Download Banner
+        </div>
+        <div className='mb-2'>
+          <ColorPicker
+            label="Set Team Name Color"
+            value={bannerColor}
+            defaultColor={bannerColor}
+            setValue={setBannerColor}
+          />
         </div>
         <div className="mb-2">
           <label htmlFor="team-select" className="mr-4">Select Logo</label>
