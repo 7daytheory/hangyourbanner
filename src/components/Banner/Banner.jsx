@@ -80,6 +80,7 @@ const Banner = () => {
   const [teamName, setTeamName] = useState(teams[0].name);
 
   const [fontColor, setFontColor] = useState('#333333');
+  const [teamColor, setTeamColor] = useState('#333333');
 
   function setBannerWidth(event) {
     setWidth(event.target.value);
@@ -128,7 +129,7 @@ const Banner = () => {
           <p className="mt-2 font-bold text-slate-600 p-2" style={{ fontSize: `${textSize}px` , color: `${fontColor}`}}>
             {bannerText}
           </p>
-          <h2 className="font-bold text-[3em] w-[90%] leading-10 mt-auto mb-2">
+          <h2 className="font-bold text-[3em] w-[90%] leading-10 mt-auto mb-2" style={{ color: `${teamColor}`}}>
             {teamName}
           </h2>
         </div>
@@ -142,7 +143,7 @@ const Banner = () => {
         >
           Download Banner
         </div>
-        <div className="mb-4">
+        <div className="mb-2">
           <label htmlFor="team-select" className="mr-4">Select Logo</label>
           <select 
             id="team-select" 
@@ -156,6 +157,14 @@ const Banner = () => {
               </option>
             ))}
           </select>
+        </div>
+        <div className='mb-6 ml-[5%]'>
+          <ColorPicker
+            label="Set Team Name Color"
+            value={teamColor}
+            defaultColor={teamColor}
+            setValue={setTeamColor}
+          />
         </div>
         <div className="mb-2">
           <h2>Text Size</h2>
@@ -181,10 +190,10 @@ const Banner = () => {
           </div>
         <div className='mb-6 ml-[5%]'>
           <ColorPicker
-          label="Set Text Color"
-          value={fontColor}
-          defaultColor={fontColor}
-          setValue={setFontColor}
+            label="Set Text Color"
+            value={fontColor}
+            defaultColor={fontColor}
+            setValue={setFontColor}
         />
         </div>
         <div className="mb-10">
