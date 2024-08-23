@@ -126,6 +126,7 @@ const Banner = () => {
           style={{ width: `${width}px`, height: `${height}px`, background: `${bannerColor}`}}
           className="p-4 bg-white text-black border-dashed border-slate-700 border-2 relative text-center font-semibold flex flex-col justify-between items-center"
         >
+          <p className="italic text-gray-400 opacity-40 absolute z-10 top-[140px]">www.HangYourBanner</p>
           <img src={selectedTeam} alt="Team Logo" className="h-[100px] w-auto m-auto mt-2" />
           <p className="mt-2 font-bold text-slate-600 p-2" style={{ fontSize: `${textSize}px` , color: `${fontColor}`}}>
             {bannerText}
