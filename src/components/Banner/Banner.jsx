@@ -150,7 +150,7 @@ const Banner = () => {
         <div 
           id="button" 
           onClick={printImage} 
-          className="mt-4 px-4 py-2 bg-slate-600 absolute width-[25%] mt-[25px] hover:bg-slate-700 text-white text-center mb-8 w-full lg:w-[25%] lg:left-0 rounded m-auto cursor-pointer"
+          className="mt-4 px-4 py-2 bg-slate-600 sm:relative lg:absolute width-[25%] mt-[25px] hover:bg-slate-700 text-white text-center mb-8 w-full lg:w-[25%] lg:left-0 rounded m-auto cursor-pointer"
         >
           Download Banner
         </div>
