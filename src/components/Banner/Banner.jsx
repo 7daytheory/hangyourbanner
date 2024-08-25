@@ -74,10 +74,13 @@ const teams = [
 const Banner = () => {
   const [width, setWidth] = useState(300);
   const [height, setHeight] = useState(400);
-  const [bannerText, setBannerText] = useState("Enter Banner Text");
+  const [bannerText, setBannerText] = useState("Ex: Went Undeafeted in the preseason");
   const [textSize, setTextSize] = useState(24);
-  const [selectedTeam, setSelectedTeam] = useState(ArizonaCardinals); 
-  const [teamName, setTeamName] = useState(teams[0].name);
+
+  // Set the initial team and name
+  const initialTeam = teams.find(team => team.name === 'Chicago Bears');
+  const [selectedTeam, setSelectedTeam] = useState(initialTeam.logo);
+  const [teamName, setTeamName] = useState(initialTeam.name);
 
   const [fontColor, setFontColor] = useState('#333333');
   const [teamColor, setTeamColor] = useState('#333333');
