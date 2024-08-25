@@ -102,10 +102,9 @@ const Banner = () => {
 
   function handleTeamChange(e) {
       const team = e.target.value;
-      const selectedTeam = teams.find(t => t.city === team);
-      console.log(selectedTeam);
+      const selectedTeam = teams.find(t => t.name === team);
       setSelectedTeam(`${selectedTeam.logo}`);
-      setTeamName(`${selectedTeam.city}`);
+      setTeamName(`${selectedTeam.name}`);
     }
 
   // Download the image
@@ -126,12 +125,12 @@ const Banner = () => {
           style={{ width: `${width}px`, height: `${height}px`, background: `${bannerColor}`}}
           className="p-4 bg-white text-black border-dashed border-slate-700 border-2 relative text-center font-semibold flex flex-col justify-between items-center"
         >
-          <p className="italic text-gray-400 opacity-40 absolute z-10 top-[140px]">www.HangYourBanner</p>
+          <p class="italic opacity-[0.2] color-black text-sm absolute top-[35%]">www.HangYourBanner.com</p>
           <img src={selectedTeam} alt="Team Logo" className="h-[100px] w-auto m-auto mt-2" />
           <p className="mt-2 font-bold text-slate-600 p-2" style={{ fontSize: `${textSize}px` , color: `${fontColor}`}}>
             {bannerText}
           </p>
-          <h2 className="font-bold text-[3em] w-[90%] leading-10 mt-auto mb-2" style={{ color: `${teamColor}`}}>
+          <h2 className="font-bold text-[2.5em] w-[90%] leading-10 mt-auto mb-2" style={{ color: `${teamColor}`}}>
             {teamName}
           </h2>
         </div>
@@ -141,7 +140,7 @@ const Banner = () => {
         <div 
           id="button" 
           onClick={printImage} 
-          className="mt-4 px-4 py-2 bg-slate-600 hover:bg-slate-700 text-white text-center mb-8 w-full lg:w-[50%] rounded m-auto cursor-pointer"
+          className="mt-4 px-4 py-2 bg-slate-600 absolute width-[25%] mt-[25px] hover:bg-slate-700 text-white text-center mb-8 w-full lg:w-[25%] lg:left-0 rounded m-auto cursor-pointer"
         >
           Download Banner
         </div>
@@ -162,8 +161,8 @@ const Banner = () => {
             className="w-full bg-gray-200 rounded-md cursor-pointer mb-4 bg-white border-2 border-slate-400"
           >
             {teams.map((team, index) => (
-              <option key={index} value={team.city}>
-                {team.city}
+              <option key={index} value={team.name}>
+                {team.name}
               </option>
             ))}
           </select>
