@@ -1,5 +1,5 @@
 import html2canvas from 'html2canvas';
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import ColorPicker from '../ColorPicker/ColorPicker.jsx';
 
 //Import logo
@@ -91,6 +91,13 @@ const Banner = () => {
     setHeight(event.target.value);
   }
 
+  const inputRef = useRef(null);
+
+  const handleScrollToInput = () => {
+    inputRef.current.scrollIntoView({ behavior: 'smooth' });
+    inputRef.current.focus();
+  };
+
   //Create image to save
   const printImage = () => {
     const banner = document.querySelector("#banner-wrap");
@@ -127,7 +134,7 @@ const Banner = () => {
         >
           <p class="italic opacity-[0.2] color-black text-sm absolute top-[35%]">www.HangYourBanner.com</p>
           <img src={selectedTeam} alt="Team Logo" className="h-[100px] w-auto m-auto mt-2" />
-          <p className="mt-2 font-bold text-slate-600 p-2" style={{ fontSize: `${textSize}px` , color: `${fontColor}`}}>
+          <p className="mt-2 font-bold text-slate-600 p-2" onClick={handleScrollToInput} style={{ fontSize: `${textSize}px` , color: `${fontColor}`}}>
             {bannerText}
           </p>
           <h2 className="font-bold text-[2.5em] w-[90%] leading-10 mt-auto mb-2" style={{ color: `${teamColor}`}}>
@@ -192,6 +199,7 @@ const Banner = () => {
             <input
               id="banner-text-input"
               type="input"
+              ref={inputRef}
               value={bannerText}
               onChange={(e) => setBannerText(e.target.value)}
               className="w-full bg-gray-200 rounded-lg cursor-pointer px-2 py-1 mb-2 cursor-text"
