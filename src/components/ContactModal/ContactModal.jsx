@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from 'emailjs-com';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ContactModal = ({ isOpen, onClose }) => {
   const [formData, setFormData] = useState({
@@ -24,13 +26,17 @@ const ContactModal = ({ isOpen, onClose }) => {
       .then(
         (result) => {
           console.log(result.text);
-          onClose();
+          toast.success('Message sent successfully!');
+          setTimeout(() => {
+            onClose();
+          }, 2000);
         },
         (error) => {
           console.log(error.text);
+          toast.error('Failed to send the message.');
         }
       );
-  };
+};
 
   if (!isOpen) return null;
 
@@ -87,6 +93,7 @@ const ContactModal = ({ isOpen, onClose }) => {
             </button>
           </div>
         </form>
+        <ToastContainer />
       </div>
     </div>
   );
