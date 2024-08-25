@@ -10,7 +10,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@emailjs/browser": "^4.4.1",
     "autoprefixer": "^10.4.20",
+    "emailjs-com": "^3.2.0",
     "html2canvas": "^1.4.1",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
