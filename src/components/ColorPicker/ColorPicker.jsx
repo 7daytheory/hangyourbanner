@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ColorPicker = ({ value, setValue, defaultColor, label }) => {
+const ColorPicker = ({ value, setValue, label }) => {
   return (
     <div className="mb-4">
       <label htmlFor={`${label}-colorPicker`} className="mb-2 font-bold block">
@@ -14,7 +14,7 @@ const ColorPicker = ({ value, setValue, defaultColor, label }) => {
         className="w-full bg-gray-200 rounded-lg cursor-pointer px-2 py-1 mb-2"
       />
       <p className="mt-2">
-        Selected color: <span style={{ color: defaultColor }}>{defaultColor}</span>
+        Selected color: <span style={{ color: '#333', textTransform: 'uppercase' }}>{value}</span>
       </p>
     </div>
   );
