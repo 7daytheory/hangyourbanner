@@ -22,7 +22,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     e.preventDefault();
 
     emailjs
-      .send('service_d4ezsub', 'template_9pnqc5k', formData, 'RSSFUKj-w9YKNpiFJ')
+      .send(SERVICE, TEMPLATE, formData, FORMINFO)
       .then(
         (result) => {
           console.log(result.text);
