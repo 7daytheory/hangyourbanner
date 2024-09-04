@@ -78,11 +78,11 @@ const Banner = () => {
   const [textSize, setTextSize] = useState(28);
 
   // Set the initial team and name
-  const initialTeam = teams.find(team => team.name === 'Chicago Bears');
+  const initialTeam = teams.find(team => team.name === 'Cincinnati Bengals');
   const [selectedTeam, setSelectedTeam] = useState(initialTeam.logo);
   const [teamName, setTeamName] = useState(initialTeam.name);
 
-  const [fontColor, setFontColor] = useState('#FFF');
+  const [fontColor, setFontColor] = useState('#FFFFFF');
   const [bannerColor, setBannerColor] = useState('#FB4F14');
   
   function setBannerWidth(event) {
