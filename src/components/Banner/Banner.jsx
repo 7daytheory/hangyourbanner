@@ -74,17 +74,16 @@ const teams = [
 const Banner = () => {
   const [width, setWidth] = useState(300);
   const [height, setHeight] = useState(400);
-  const [bannerText, setBannerText] = useState("Ex: Went Undeafeted in the preseason");
-  const [textSize, setTextSize] = useState(24);
+  const [bannerText, setBannerText] = useState("3-1 Record vs Patrick Mahomes and the Chiefs");
+  const [textSize, setTextSize] = useState(28);
 
   // Set the initial team and name
   const initialTeam = teams.find(team => team.name === 'Chicago Bears');
   const [selectedTeam, setSelectedTeam] = useState(initialTeam.logo);
   const [teamName, setTeamName] = useState(initialTeam.name);
 
-  const [fontColor, setFontColor] = useState('#333333');
-  const [teamColor, setTeamColor] = useState('#333333');
-  const [bannerColor, setBannerColor] = useState('#FFFFFF');
+  const [fontColor, setFontColor] = useState('#FFF');
+  const [bannerColor, setBannerColor] = useState('#FB4F14');
   
   function setBannerWidth(event) {
     setWidth(event.target.value);
@@ -135,12 +134,12 @@ const Banner = () => {
           style={{ width: `${width}px`, height: `${height}px`, background: `${bannerColor}`}}
           className="p-4 bg-white text-black border-dashed border-slate-700 border-2 relative text-center font-semibold flex flex-col justify-between items-center"
         >
-          <p class="italic opacity-[0.2] color-black text-sm absolute top-[35%]">www.HangYourBanner.com</p>
+          <p className="italic opacity-[0.3] color-slate-800 text-sm absolute top-[32%]">www.HangYourBanner.com</p>
           <img src={selectedTeam} alt="Team Logo" className="h-[100px] w-auto m-auto mt-2" />
           <p className="mt-2 font-bold text-slate-600 p-2" onClick={handleScrollToInput} style={{ fontSize: `${textSize}px` , color: `${fontColor}`}}>
             {bannerText}
           </p>
-          <h2 className="font-bold text-[2.5em] w-[90%] leading-10 mt-auto mb-2" style={{ color: `${teamColor}`}}>
+          <h2 className="font-bold text-[2.5em] w-[90%] leading-10 mt-auto mb-2" style={{ color: `${fontColor}`}}>
             {teamName}
           </h2>
         </div>
@@ -176,14 +175,6 @@ const Banner = () => {
               </option>
             ))}
           </select>
-        </div>
-        <div className='mb-6 ml-[5%]'>
-          <ColorPicker
-            label="Set Team Name Color"
-            value={teamColor}
-            defaultColor={teamColor}
-            setValue={setTeamColor}
-          />
         </div>
         <div className="mb-2">
           <h2>Text Size</h2>
