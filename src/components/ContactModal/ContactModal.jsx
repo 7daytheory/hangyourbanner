@@ -4,6 +4,10 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const ContactModal = ({ isOpen, onClose }) => {
+  const FORM_KEY = import.meta.env.VITE_FORM_KEY;
+  const TEMPLATE_KEY = import.meta.env.VITE_TEMPLATE_KEY;
+  const SERVICE_KEY = import.meta.env.VITE_SERVICE_KEY;
+
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -22,7 +26,7 @@ const ContactModal = ({ isOpen, onClose }) => {
     e.preventDefault();
 
     emailjs
-      .send(SERVICE, TEMPLATE, formData, FORMINFO)
+      .send(SERVICE_KEY, TEMPLATE_KEY, formData, FORM_KEY)
       .then(
         (result) => {
           console.log(result.text);
