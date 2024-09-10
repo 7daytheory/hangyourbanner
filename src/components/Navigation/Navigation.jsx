@@ -20,7 +20,6 @@ const Navigation = () => {
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Hang Your Banner</span>
         </a>
         <div className="flex items-center space-x-4 md:order-2">
-          <button type="button" className="px-4 py-2 text-sm font-medium text-gray-300 dark:text-gray-300 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-300" disabled>Donate (soon)</button>
           <button
               type="button"
               onClick={openModal}
@@ -28,9 +27,6 @@ const Navigation = () => {
             >
               Contact
             </button>
-          <button type="button" data-dropdown-toggle="language-dropdown-menu" className="inline-flex items-center justify-center px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg cursor-pointer hover:bg-gray-100 dark:hover:bg-gray-700">
-            Beta (1.0.0)
-          </button>
           <div className="z-50 hidden my-4 text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow dark:bg-gray-700" id="language-dropdown-menu">
           </div>
         </div>
