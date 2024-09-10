@@ -10,6 +10,7 @@ const ContactModal = ({ isOpen, onClose }) => {
 
   const [formData, setFormData] = useState({
     name: '',
+    subject: 'Hang Your Banner',
     email: '',
     message: '',
   });
