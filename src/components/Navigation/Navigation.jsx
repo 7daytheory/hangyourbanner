@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from "../../assets/logo.svg";
-import { Fade } from "react-awesome-reveal"
+import { Fade, JackInTheBox} from "react-awesome-reveal"
 
 const Navigation = ({ openModal }) => {
   return (
@@ -8,16 +8,17 @@ const Navigation = ({ openModal }) => {
       <nav className="bg-white border-gray-200 dark:bg-gray-900 max-h-[70px]">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
           <div className="flex items-center">
-            <Fade direction='left' duration={1500} triggerOnce={true}>
+            <JackInTheBox direction='left' duration={1500} triggerOnce>
               <img 
                 src={logo} 
                 className="h-[150px] mt-[-30px] w-auto"
                 alt="Hang Your Banner Logo" 
               />
-            </Fade>
+            </JackInTheBox>
           </div>
 
           <div className="flex items-end space-x-4 mt-[-80px]">
+            <Fade cascade duration={750} triggerOnce direction='down'>
             <button
               type="button"
               href="examples"
@@ -46,6 +47,7 @@ const Navigation = ({ openModal }) => {
             >
               Your Account(Soon)
             </button>
+            </Fade>
           </div>
         </div>
       </nav>
