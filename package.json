@@ -16,7 +16,9 @@
     "html2canvas": "^1.4.1",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
+    "react-awesome-reveal": "^4.2.14",
     "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.2",
     "react-toastify": "^10.0.5"
   },
   "devDependencies": {
