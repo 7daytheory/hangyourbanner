@@ -1,33 +1,24 @@
-import React, { useState } from 'react';
-import ContactModal from '../ContactModal/ContactModal';
+import React from 'react';
 import logo from "../../assets/logo.svg";
+import { Fade, JackInTheBox} from "react-awesome-reveal"
 
-const Navigation = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
+const Navigation = ({ openModal }) => {
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 max-h-[70px]">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-          {/* Logo Section */}
           <div className="flex items-center">
-            <img 
-              src={logo} 
-              className="h-[150px] w-auto absolute top-0 left-[100px]" 
-              alt="Hang Your Banner Logo" 
-            />
+            <JackInTheBox direction='left' duration={1500} triggerOnce>
+              <img 
+                src={logo} 
+                className="h-[150px] mt-[-30px] w-auto"
+                alt="Hang Your Banner Logo" 
+              />
+            </JackInTheBox>
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-end space-x-4 mt-[-80px]">
+            <Fade cascade duration={750} triggerOnce direction='down'>
             <button
               type="button"
               href="examples"
@@ -56,10 +47,10 @@ const Navigation = () => {
             >
               Your Account(Soon)
             </button>
+            </Fade>
           </div>
         </div>
       </nav>
-      <ContactModal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 };
