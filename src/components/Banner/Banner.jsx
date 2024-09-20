@@ -35,6 +35,7 @@ import SeattleSeahawks from '../../assets/nfl/Seattle.svg';
 import TampaBayBuccaneers from '../../assets/nfl/TampaBay.svg';
 import TennesseeTitans from '../../assets/nfl/Tennessee.svg';
 import WashingtonCommanders from '../../assets/nfl/Washington.svg';
+import Watermark from '../Watermark/Watermark.jsx';
 
 const teams = [
   { city: 'Arizona', name: 'Arizona Cardinals', logo: ArizonaCardinals },
@@ -128,7 +129,7 @@ const Banner = () => {
 
   return (
     <div className="flex flex-col lg:flex-row justify-between items-center mx-auto w-[70%] mt-10 relative">
-      <div id="banner-wrap" className="p-2 border-2 border-solid border-slate-700 bg-gray-200">
+      <div id="banner-wrap" className="p-2 border-2 border-solid border-slate-700 bg-gray-200 relative overflow-hidden">
         <div
           id="banner"
           style={{ width: `${width}px`, height: `${height}px`, background: `${bannerColor}`}}
@@ -143,6 +144,7 @@ const Banner = () => {
             {teamName}
           </h2>
         </div>
+        <Watermark />
       </div>
 
       <div id="sliders" className="w-full lg:w-[40%] mt-8 lg:mt-0 lg:ml-6">
