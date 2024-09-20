@@ -1,33 +1,23 @@
-import React, { useState } from 'react';
-import ContactModal from '../ContactModal/ContactModal';
+import React from 'react';
 import logo from "../../assets/logo.svg";
+import { Fade } from "react-awesome-reveal"
 
-const Navigation = () => {
-  const [isModalOpen, setModalOpen] = useState(false);
-
-  const openModal = () => {
-    setModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setModalOpen(false);
-  };
-
+const Navigation = ({ openModal }) => {
   return (
     <>
       <nav className="bg-white border-gray-200 dark:bg-gray-900 max-h-[70px]">
         <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
-          {/* Logo Section */}
           <div className="flex items-center">
-            <img 
-              src={logo} 
-              className="h-[150px] w-auto absolute top-0 left-[100px]" 
-              alt="Hang Your Banner Logo" 
-            />
+            <Fade direction='left' duration={1500} triggerOnce={true}>
+              <img 
+                src={logo} 
+                className="h-[150px] mt-[-30px] w-auto"
+                alt="Hang Your Banner Logo" 
+              />
+            </Fade>
           </div>
 
-          {/* Navigation Buttons */}
-          <div className="flex items-center space-x-4">
+          <div className="flex items-end space-x-4 mt-[-80px]">
             <button
               type="button"
               href="examples"
@@ -59,7 +49,6 @@ const Navigation = () => {
           </div>
         </div>
       </nav>
-      <ContactModal isOpen={isModalOpen} onClose={closeModal} />
     </>
   );
 };
