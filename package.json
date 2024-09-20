@@ -12,8 +12,12 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "autoprefixer": "^10.4.20",
+    "axios": "^1.7.7",
+    "bcryptjs": "^2.4.3",
     "emailjs-com": "^3.2.0",
+    "express-validator": "^7.2.0",
     "html2canvas": "^1.4.1",
+    "jsonwebtoken": "^9.0.2",
     "postcss": "^8.4.41",
     "react": "^18.3.1",
     "react-awesome-reveal": "^4.2.14",
