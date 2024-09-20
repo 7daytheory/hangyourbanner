@@ -12,12 +12,12 @@ const Navigation = ({ openModal }) => {
 
   return (
     <nav className="bg-white border-gray-200 dark:bg-gray-900">
-      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4">
+      <div className="max-w-screen-xl flex items-center justify-between mx-auto p-4 max-h-[70px]">
         <div className="flex items-center">
           <JackInTheBox direction="left" duration={1500} triggerOnce>
             <img
               src={logo}
-              className="h-[80px] w-auto"
+              className="h-[150px] w-auto mt-[70px]"
               alt="Hang Your Banner Logo"
             />
           </JackInTheBox>
