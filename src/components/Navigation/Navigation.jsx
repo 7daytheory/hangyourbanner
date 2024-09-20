@@ -21,29 +21,29 @@ const Navigation = ({ openModal }) => {
             <Fade cascade duration={750} triggerOnce direction='down'>
             <button
               type="button"
-              href="examples"
-              className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              href="#examples"
+              className="px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
             >
               Examples
             </button>
             <button
               type="button"
               href="#"
-              className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
             >
               Donate(Soon)
             </button>
             <button
               type="button"
               onClick={openModal}
-              className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
             >
               Contact
             </button>
             <button
               type="button"
               href="#"
-              className="px-4 py-2 text-sm font-medium text-gray-900 dark:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700"
+              className="px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
             >
               Your Account(Soon)
             </button>
