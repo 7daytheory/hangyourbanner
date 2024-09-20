@@ -66,6 +66,7 @@ const Navigation = ({ openModal }) => {
       {/* Mobile dropdown */}
       {isMenuOpen && (
         <div className="lg:hidden bg-gray-900 text-center">
+          <Fade duration={500} cascade direction='down'>
           <button
             type="button"
             href="#examples"
@@ -94,6 +95,7 @@ const Navigation = ({ openModal }) => {
           >
             Your Account(Soon)
           </button>
+          </Fade>
         </div>
       )}
     </nav>
