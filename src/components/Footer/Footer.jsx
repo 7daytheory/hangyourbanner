@@ -60,7 +60,7 @@ const Footer = ({ openModal }) => {
           </ul>
         </div>
         <hr className="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-6" />
-        <span className="block text-sm lg:text-[0.6em] lg:my-4 text-gray-500 sm:text-center dark:text-slate-200 tracking-[2px]">
+        <span className="block text-sm lg:text-[0.6em] lg:my-4 text-[0.75em] text-gray-500 text-center dark:text-slate-200 tracking-[2px]">
           © {year}{' '}
           <a href="https://matthewjlowe.com" className="hover:text-gray-400">
             Hang Your Banner
