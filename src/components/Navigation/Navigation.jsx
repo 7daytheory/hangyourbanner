@@ -69,31 +69,10 @@ const Navigation = ({ openModal }) => {
           <Fade duration={500} cascade direction='down'>
           <button
             type="button"
-            href="#examples"
-            className="block w-full px-4 py-4 my-2 text-sm font-medium text-gray-200 hover:bg-red-800"
-          >
-            Examples
-          </button>
-          <button
-            type="button"
-            href="#"
-            className="block w-full px-4 py-4 my-2 text-sm font-medium text-gray-200 hover:bg-red-800"
-          >
-            Donate(Soon)
-          </button>
-          <button
-            type="button"
             onClick={openModal}
             className="block w-full px-4 py-4 my-2 text-sm font-medium text-gray-200 hover:bg-red-800"
           >
             Contact
-          </button>
-          <button
-            type="button"
-            href="#"
-            className="block w-full px-4 py-4 my-2 text-sm font-medium text-gray-200 hover:bg-red-800"
-          >
-            Your Account(Soon)
           </button>
           </Fade>
         </div>
