@@ -33,31 +33,10 @@ const Navigation = ({ openModal }) => {
           <Fade cascade duration={750} triggerOnce direction="down">
             <button
               type="button"
-              href="#examples"
-              className="block px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
-            >
-              Examples
-            </button>
-            <button
-              type="button"
-              href="#"
-              className="block px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
-            >
-              Donate(Soon)
-            </button>
-            <button
-              type="button"
               onClick={openModal}
               className="block px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
             >
               Contact
-            </button>
-            <button
-              type="button"
-              href="#"
-              className="block px-4 py-2 text-sm font-medium text-gray-200 hover:text-gray-300"
-            >
-              Your Account(Soon)
             </button>
           </Fade>
         </div>
